@@ -1,0 +1,34 @@
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function makeid()
+{
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
+window.onload=function(){
+    document.querySelector('.tweet-form').setAttribute("class","t1-form tweet-form");
+document.querySelector('#timeline > div.timeline-tweet-box > div > form > div.TweetBoxToolbar > div.TweetBoxToolbar-tweetButton.tweetbutton > button').removeAttribute("disabled");
+    
+    var tweets = ['Record Broken @TCSITWiz','Yo! The record has been broken @TCSITWiz','This is the best TCS IT Wiz ever taken place in Lucknow @TCSITWiz','Twitter record broken, thanks to me :p @TCSITWiz','Music is good too @TCSITWiz','Pressure! Pressure! Pressure! @TCSITWiz','Champion will travel to Mumbai for the final @TCSITWiz', 'All of them want to rewrite history @TCSITWiz','Lucknow broke all records @TCSITWiz','Call me too for dinner to Taj @TCSITWiz','I need Pizza @TCSITWiz','Can you give me one of those prizes for nothing @TCSITWiz','Never tweeted so much @TCSITWiz','How wrong can you go? :p @TCSITWiz','The fastest gender @TCSITWiz','Aishwary Jaiswal making Lucknow proud @TCSITWiz', 'Army Public School!!! @TCSITWiz','Army Public SChool are bouncing back into the quiz @TCSITWiz','Please wait for question appear. Play fair @TCSITWiz','So many minus 10s @TCSITWiz','Nitin nailed it @TCSITWiz'];
+    var emoji = [':)',':*',':D','XD','xD',';)','B)','Yo!!','Yay!!',':) :)','yaw!!','Pickbrain rocks!',"Great Place :D","Enjoying","Marvelous!","Great!!!","Great!!!!","Great!!!!!!!"];
+    var length= tweets.length;
+    var val= getRandomInt(0,length-1);
+    var emo_len=getRandomInt(0,(emoji.length-1));
+
+document.querySelector('#tweet-box-home-timeline > div').innerText=tweets[val]+' '+emoji[emo_len];
+
+
+document.querySelector(".tweet-action").click();
+
+
+window.open("https://twitter.com");
+
+
+}
